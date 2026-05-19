@@ -1,6 +1,6 @@
-# Aryan Mehta — Premium Portfolio
+# Kuldeep Rajak — Portfolio
 
-A handcrafted premium portfolio built with **Next.js 14**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Lenis** smooth scroll.
+A handcrafted portfolio built with **Next.js 14**, **React**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and **Lenis** smooth scroll.
 
 ---
 

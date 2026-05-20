@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 const slideUp = {
@@ -13,6 +13,9 @@ const slideUp = {
 
 export default function Hero() {
   const bgNumRef = useRef<HTMLDivElement>(null);
+  const [coverPreview, setCoverPreview] = useState<string | null>(null);
+  const coverUrlRef = useRef<string | null>(null);
+  const defaultCoverSrc = "/portfolio-cover-page.png";
 
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
@@ -24,6 +27,21 @@ export default function Hero() {
     document.addEventListener("mousemove", onMove);
     return () => document.removeEventListener("mousemove", onMove);
   }, []);
+
+  useEffect(() => {
+    return () => {
+      if (coverUrlRef.current) URL.revokeObjectURL(coverUrlRef.current);
+    };
+  }, []);
+
+  const onCoverChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (coverUrlRef.current) URL.revokeObjectURL(coverUrlRef.current);
+    const url = URL.createObjectURL(file);
+    coverUrlRef.current = url;
+    setCoverPreview(url);
+  };
 
   const magnetize = (e: React.MouseEvent<HTMLElement>) => {
     const el = e.currentTarget;
@@ -52,6 +70,23 @@ export default function Hero() {
         01
       </div>
 
+      {/* Cover image upload section */}
+      <div
+        className="absolute top-[110px] right-[60px] w-[min(42vw,520px)] rounded-sm overflow-hidden"
+        style={{ border: "1px solid var(--dark-gray)", background: "rgba(255,255,255,0.02)", backdropFilter: "blur(8px)" }}
+      >
+        <div className="h-[220px] md:h-[260px] relative">
+          <img
+            src={coverPreview ?? defaultCoverSrc}
+            alt="Hero cover"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <label className="block cursor-pointer font-mono text-[0.68rem] tracking-[0.15em] uppercase px-5 py-4" style={{ borderTop: "1px solid var(--dark-gray)", color: "var(--soft-white)" }}>
+          <input type="file" accept="image/*" className="hidden" onChange={onCoverChange} />
+        </label>
+      </div>
+
       {/* Tag */}
       <div className="overflow-hidden mb-7">
         <motion.p
@@ -66,7 +101,7 @@ export default function Hero() {
       {/* Name */}
       <h1
         className="font-sans font-extrabold leading-[0.92] mb-9"
-        style={{ fontSize: "clamp(52px,9vw,140px)", letterSpacing: "-0.03em", color: "var(--white)" }}
+        style={{ fontSize: "clamp(26px,4vw,70px)", letterSpacing: "-0.03em", color: "var(--white)" }}
       >
         {["Kuldeep", "Rajak", "— Portfolio"].map((word, i) => (
           <span key={word} className="block overflow-hidden">

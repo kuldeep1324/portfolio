@@ -20,12 +20,6 @@ function useCounter(target: number, start: boolean, duration = 1800) {
   return val;
 }
 
-const cards = [
-  { num: "01", title: "Design with Purpose",          text: "Every pixel I place has a reason. I approach every project with the mindset of a designer and the precision of an engineer, creating work that is both beautiful and functional." },
-  { num: "02", title: "Technology Meets Craft",       text: "I bridge the gap between complex engineering and refined aesthetics. From architecture decisions to micro-interactions, every detail receives full attention." },
-  { num: "03", title: "Partner, Not Just Developer",  text: "I work closely with founders, product teams, and creative directors to understand not just what to build, but why — ensuring the final product exceeds expectations." },
-];
-
 export default function About() {
   const statsRef  = useRef<HTMLDivElement>(null);
   const statsView = useInView(statsRef, { once: true, amount: 0.5 });
@@ -81,28 +75,9 @@ export default function About() {
         </a>
       </motion.div>
 
-      {/* Right — cards */}
+      {/* Right — blank space for images */}
       <div className="flex flex-col gap-5 pt-[60px]">
-        {cards.map((c, i) => (
-          <motion.div
-            key={c.num}
-            className="about-card border p-9 relative overflow-hidden group"
-            style={{ background: "var(--charcoal)", borderColor: "var(--dark-gray)" }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={sectionView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: i * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-            whileHover={{ x: 6, borderColor: "var(--mid-gray)" }}
-          >
-            {/* left accent bar */}
-            <span
-              className="absolute top-0 left-0 w-px transition-all duration-500 group-hover:h-full"
-              style={{ background: "var(--accent)", height: 0 }}
-            />
-            <div className="font-mono text-[0.65rem] tracking-[0.2em] mb-4" style={{ color: "var(--accent-dim)" }}>{c.num}</div>
-            <div className="font-sans font-semibold mb-3" style={{ fontSize: "1.1rem", color: "var(--soft-white)" }}>{c.title}</div>
-            <p className="font-display font-light leading-[1.65]" style={{ color: "var(--silver)" }}>{c.text}</p>
-          </motion.div>
-        ))}
+        {/* Add your images here */}
       </div>
 
       {/* Mobile: single column */}

@@ -4,18 +4,20 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const skills = [
-  { icon: "⚛",  name: "React / Next.js",  level: "Expert",   w: 95 },
-  { icon: "🎨", name: "UI/UX Design",     level: "Expert",   w: 90 },
-  { icon: "🟢", name: "Node.js",          level: "Advanced", w: 88 },
-  { icon: "🔷", name: "TypeScript",       level: "Advanced", w: 85 },
-  { icon: "🗄",  name: "PostgreSQL",       level: "Advanced", w: 82 },
-  { icon: "☁",  name: "AWS / Cloud",      level: "Advanced", w: 80 },
-  { icon: "🌊", name: "Tailwind CSS",     level: "Expert",   w: 92 },
-  { icon: "🎬", name: "Framer Motion",    level: "Advanced", w: 78 },
+  { name: "React / Next.js", level: "Expert", w: 95 },
+  { name: "UI/UX Design", level: "Expert", w: 90 },
+  { name: "Node.js", level: "Advanced", w: 88 },
+  { name: "TypeScript", level: "Advanced", w: 85 },
+  { name: "PostgreSQL", level: "Advanced", w: 82 },
+  { name: "MongoDB", level: "Advanced", w: 80 },
+  { name: "Tailwind CSS", level: "Expert", w: 92 },
+  { name: "Framer Motion", level: "Advanced", w: 78 },
 ];
 
+const languages = ["C", "C++", "JavaScript", "Python"];
+
 export default function Skills() {
-  const ref  = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const view = useInView(ref, { once: true, amount: 0.1 });
 
   return (
@@ -23,8 +25,8 @@ export default function Skills() {
       id="skills"
       className="py-[120px] px-[60px]"
       style={{
-        background:   "var(--charcoal)",
-        borderTop:    "1px solid var(--dark-gray)",
+        background: "var(--charcoal)",
+        borderTop: "1px solid var(--dark-gray)",
         borderBottom: "1px solid var(--dark-gray)",
       }}
     >
@@ -33,66 +35,108 @@ export default function Skills() {
         <motion.h2
           className="font-sans font-bold leading-none"
           style={{ fontSize: "clamp(36px,5vw,72px)", letterSpacing: "-0.03em", color: "var(--white)" }}
-          initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          Technical<br/>Mastery
+          Technical
+          <br />
+          Skills
         </motion.h2>
+
         <motion.p
           className="font-display italic text-right max-w-xs leading-relaxed"
           style={{ fontSize: "1.1rem", color: "var(--muted)" }}
-          initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
-          viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-          A curated set of technologies I've mastered over years of real-world product development.
+          Combining design, development, and innovation to create impactful digital products.
         </motion.p>
       </div>
 
-      {/* Grid */}
-      <div
-        ref={ref}
-        className="grid"
-        style={{
-          gridTemplateColumns: "repeat(4,1fr)",
-          gap: "1px",
-          background: "var(--dark-gray)",
-          border: "1px solid var(--dark-gray)",
-        }}
-      >
-        {skills.map((s, i) => (
-          <div
-            key={s.name}
-            className="skill-cell relative overflow-hidden p-9 group transition-colors duration-300"
-            style={{ background: "var(--charcoal)" }}
-            onMouseEnter={e => (e.currentTarget.style.background = "var(--graphite)")}
-            onMouseLeave={e => (e.currentTarget.style.background = "var(--charcoal)")}
-          >
-            <div className="text-2xl mb-5 relative z-10 transition-transform duration-300 group-hover:scale-110">
-              {s.icon}
-            </div>
-            <div className="font-sans font-semibold mb-2 relative z-10" style={{ color: "var(--soft-white)" }}>
-              {s.name}
-            </div>
-            <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase relative z-10" style={{ color: "var(--accent)" }}>
-              {s.level}
-            </div>
+      {/* Two-column layout: left = skills grid, right = languages panel */}
+      <div style={{ display: "grid", gridTemplateColumns: "3fr 1fr", gap: 40 }}>
+        {/* Left: skills grid */}
+        <div
+          ref={ref}
+          className="grid"
+          style={{
+            gridTemplateColumns: "repeat(4,1fr)",
+            gap: "1px",
+            background: "var(--dark-gray)",
+            border: "1px solid var(--dark-gray)",
+          }}
+        >
+          {skills.map((s, i) => (
+            <div
+              key={s.name}
+              className="skill-cell relative overflow-hidden p-9 group transition-colors duration-300 min-h-[180px]"
+              style={{ background: "var(--charcoal)" }}
+              onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => (e.currentTarget.style.background = "var(--graphite)")}
+              onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => (e.currentTarget.style.background = "var(--charcoal)")}
+            >
+              <div className="font-mono text-[0.65rem] tracking-[0.2em] uppercase relative z-10 mb-10" style={{ color: "var(--accent-dim)" }}>
+                0{i + 1}
+              </div>
 
-            {/* Animated bar */}
-            <motion.div
-              className="absolute bottom-0 left-0 h-[2px]"
-              style={{ background: "var(--accent)" }}
-              initial={{ width: 0 }}
-              animate={view ? { width: `${s.w}%` } : { width: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.07, ease: [0.77, 0, 0.18, 1] }}
-            />
+              <div className="font-sans font-semibold mb-3 relative z-10" style={{ color: "var(--soft-white)", fontSize: "1.05rem" }}>
+                {s.name}
+              </div>
+
+              <div className="font-display font-light leading-relaxed relative z-10 max-w-[18ch]" style={{ color: "var(--muted)" }}>
+                Simple, focused, and aligned with the overall visual language.
+              </div>
+
+              <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase relative z-10 mt-5" style={{ color: "var(--accent)" }}>
+                {s.level}
+              </div>
+
+              {/* Animated bar */}
+              <motion.div
+                className="absolute bottom-0 left-0 h-[2px]"
+                style={{ background: "var(--accent)" }}
+                initial={{ width: 0 }}
+                animate={view ? { width: `${s.w}%` } : { width: 0 }}
+                transition={{ duration: 0.8, delay: i * 0.07, ease: [0.77, 0, 0.18, 1] }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Right: Languages panel (distinct look) */}
+        <aside className="relative">
+          <div className="absolute -left-8 top-[20px] w-12 h-12 rounded-full border-2" style={{ borderColor: "rgba(255,255,255,0.06)" }} />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            {languages.map((lang, idx) => (
+              <div
+                key={lang}
+                style={{ padding: "28px 24px", background: "linear-gradient(180deg, rgba(255,255,255,0.01), transparent)" }}
+                className="group"
+              >
+                <div className="font-mono text-[0.65rem] tracking-[0.2em] uppercase" style={{ color: "var(--accent-dim)", marginBottom: 6 }}>
+                  0{idx + 1}
+                </div>
+                <div className="font-sans font-bold" style={{ color: "var(--soft-white)", fontSize: "1.3rem" }}>
+                  {lang}
+                </div>
+                <div className="font-display font-light mt-3" style={{ color: "var(--muted)", maxWidth: "24ch" }}>
+                  Proficient in core concepts and practical usage.
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </aside>
       </div>
 
       <style>{`
         @media(max-width:900px){
           #skills { padding:80px 24px!important; }
           #skills .grid { grid-template-columns:repeat(2,1fr)!important; }
+          #skills > div { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

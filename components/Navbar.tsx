@@ -28,16 +28,17 @@ export default function Navbar() {
         style={{
           paddingTop:    scrolled ? "18px" : "28px",
           paddingBottom: scrolled ? "18px" : "28px",
-          background:    scrolled ? "rgba(10,10,10,.85)" : "transparent",
-          backdropFilter: scrolled ? "blur(20px)" : "none",
-          borderBottom:  scrolled ? "1px solid rgba(255,255,255,.04)" : "none",
+          background:    scrolled ? "rgba(255,255,255,0.03)" : "rgba(255,255,255,0.015)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          borderBottom:  scrolled ? "1px solid rgba(255,255,255,.04)" : "1px solid rgba(255,255,255,.02)",
         }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2.6 }}
       >
         {/* Logo */}
-        <a href="#" className="font-display text-2xl font-light tracking-wide no-underline" style={{ color: "var(--white)" }}>
+        <a href="#" className="font-display text-2xl font-light tracking-wide no-underline" style={{ color: "var(--soft-white)" }}>
           K<span style={{ color: "var(--accent)" }}>.</span>R
         </a>
 
@@ -48,7 +49,7 @@ export default function Navbar() {
               <a
                 href={l.href}
                 className="font-mono text-[0.72rem] tracking-[0.15em] uppercase no-underline relative group transition-colors duration-300"
-                style={{ color: "var(--silver)" }}
+                style={{ color: "var(--soft-white)" }}
               >
                 {l.label}
                 <span
@@ -64,9 +65,9 @@ export default function Navbar() {
         <a
           href="#contact"
           className="hidden md:inline-block font-mono text-[0.72rem] tracking-[0.15em] uppercase px-6 py-3 no-underline transition-colors duration-300"
-          style={{ background: "var(--accent)", color: "var(--black)" }}
-          onMouseEnter={e => (e.currentTarget.style.background = "var(--warm-gray)")}
-          onMouseLeave={e => (e.currentTarget.style.background = "var(--accent)")}
+          style={{ background: "transparent", color: "var(--soft-white)", border: "1px solid rgba(255,255,255,0.06)" }}
+          onMouseEnter={e => { e.currentTarget.style.background = "var(--accent)"; e.currentTarget.style.color = "var(--black)" }}
+          onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "var(--soft-white)" }}
         >
           Hire Me
         </a>
@@ -87,7 +88,7 @@ export default function Navbar() {
       {open && (
         <motion.div
           className="fixed inset-0 z-[900] flex flex-col items-center justify-center"
-          style={{ background: "var(--charcoal)" }}
+          style={{ background: "rgba(255,255,255,0.02)", backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
         >
           <ul className="list-none flex flex-col gap-8 text-center">

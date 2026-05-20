@@ -119,23 +119,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 right-[60px] hidden md:flex flex-col items-center gap-2.5">
-        <div className="w-px h-[60px] overflow-hidden" style={{ background: "var(--dark-gray)" }}>
-          <motion.div
-            className="w-full h-full"
-            style={{ background: "var(--accent)", originY: 0 }}
-            animate={{ y: ["-100%", "200%"] }}
-            transition={{ repeat: Infinity, duration: 2, ease: [0.77, 0, 0.18, 1], delay: 3 }}
-          />
-        </div>
-        <span
-          className="font-mono text-[0.65rem] tracking-[0.2em] uppercase"
-          style={{ color: "var(--muted)", writingMode: "vertical-rl" }}
-        >
-          Scroll
-        </span>
-      </div>
+      {/* Scroll indicator removed */}
     </section>
   );
 }

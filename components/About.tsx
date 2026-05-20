@@ -66,28 +66,9 @@ export default function About() {
         </h2>
         <p className="font-display font-light leading-[1.75] mb-12"
            style={{ fontSize: "clamp(1.1rem,1.8vw,1.35rem)", color: "var(--warm-gray)" }}>
-          I am a creative developer and designer based in Gwalior, with a passion for building products that are both technically excellent and visually unforgettable.
+          Hello! I'm Kuldeep Rajak, a passionate developer and creator who enjoys building solutions that connect both the digital and real world. I specialize in full-stack JavaScript development using the MERN stack (MongoDB, Express.js, React, and Node.js) to create modern, seamless web applications, along with React Native for cross-platform mobile apps. Beyond software, I am deeply interested in IoT and love working with hardware like Arduino and ESP32 to turn ideas into real-world projects. Currently, I am exploring Artificial Intelligence to combine both software & hardware into smarter, connected systems.
         </p>
-
-        {/* Stats */}
-        <div ref={statsRef} className="flex gap-10 mb-12">
-          {[
-            { val: c1, suffix: "+", label: "Projects Shipped" },
-            { val: c2, suffix: "+", label: "Happy Clients"    },
-            { val: c3, suffix: "",  label: "Years Experience" },
-          ].map(s => (
-            <div key={s.label} className="border-t pt-5" style={{ borderColor: "var(--dark-gray)" }}>
-              <div className="font-sans font-extrabold leading-none mb-1.5"
-                   style={{ fontSize: "2.8rem", letterSpacing: "-0.04em", color: "var(--white)" }}>
-                <span style={{ color: "var(--accent)" }}>{s.val}</span>{s.suffix}
-              </div>
-              <div className="font-mono text-[0.65rem] tracking-[0.2em] uppercase"
-                   style={{ color: "var(--muted)" }}>
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
+    
 
         <a
           href="/resume.pdf"

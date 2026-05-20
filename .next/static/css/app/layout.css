@@ -541,9 +541,6 @@ video {
 .bottom-0{
   bottom: 0px;
 }
-.bottom-10{
-  bottom: 2.5rem;
-}
 .bottom-12{
   bottom: 3rem;
 }
@@ -670,15 +667,9 @@ video {
 .h-\[2px\]{
   height: 2px;
 }
-.h-\[60px\]{
-  height: 60px;
-}
 .h-fit{
   height: -moz-fit-content;
   height: fit-content;
-}
-.h-full{
-  height: 100%;
 }
 .h-px{
   height: 1px;
@@ -767,9 +758,6 @@ video {
 }
 .gap-2{
   gap: 0.5rem;
-}
-.gap-2\.5{
-  gap: 0.625rem;
 }
 .gap-4{
   gap: 1rem;

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const allProjects = [
   {
-    id: 1, num: "01", large: true,
+    id: 1, num: "01", large: false,
     title: "Lumina — SaaS Dashboard",
     desc:  "A data-rich analytics platform built for enterprise clients with real-time processing and a luxury UI system.",
     tags:  ["Next.js", "TypeScript", "PostgreSQL", "Framer Motion"],
@@ -40,16 +40,7 @@ const allProjects = [
     bg:    "#1a1619",
     category: "Web App",
     demo: "#", github: "#",
-  },
-  {
-    id: 5, num: "05", large: false,
-    title: "Apex — Mobile App",
-    desc:  "A fitness tracking mobile application with social features and live data.",
-    tags:  ["React Native", "Firebase", "Expo"],
-    bg:    "#191a16",
-    category: "Mobile",
-    demo: "#", github: "#",
-  },
+  }
 ];
 
 const filters = ["All", "Web App", "Design", "Mobile"];

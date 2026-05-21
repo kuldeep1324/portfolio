@@ -4,28 +4,16 @@ import { motion } from "framer-motion";
 
 const timeline = [
   {
-    date:    "2023 — Present",
-    role:    "Senior Creative Developer",
-    company: "NovaCraft Studio, Bangalore",
-    desc:    "Leading frontend architecture and design systems for product teams. Built scalable component libraries and animated web experiences for 10+ clients globally.",
+    date:    "2025 — Present",
+    role:    "Backend Part",
+    company: "Self Learning",
+    desc:    "eveloped secure and scalable backend systems using Node.js, Express.js, MongoDB, and PostgreSQL, building RESTful APIs for authentication, transactions, and efficient data management.",
   },
   {
-    date:    "2021 — 2023",
-    role:    "Full-Stack Developer",
-    company: "Helix Technologies, Mumbai",
-    desc:    "Designed and shipped 4 major SaaS products from scratch. Led a team of 5 engineers, handled everything from database architecture to pixel-perfect UI implementation.",
-  },
-  {
-    date:    "2020 — 2021",
-    role:    "UI Engineer & Designer",
-    company: "Freelance / Remote",
-    desc:    "Worked with early-stage startups and solo founders to create brand identities, landing pages, and web apps that punched above their weight visually.",
-  },
-  {
-    date:    "2019 — 2020",
-    role:    "Junior Developer",
-    company: "Sparkmind Agency, Indore",
-    desc:    "Started my career building client websites and internal tools. Quickly rose to lead frontend development for the agency's flagship clients.",
+    date:    "2024 — 2025",
+    role:    "Frontend Part",
+    company: "College Projects, Madhav Institute of Technology and Science",
+    desc:    "Built responsive and modern web applications using React, Next.js, and Tailwind CSS, creating interactive dashboards, dynamic UI components, and smooth user experiences across all devices with backend API integration and efficient state management."
   },
 ];
 
@@ -55,7 +43,7 @@ export default function Experience() {
           </h2>
           <p className="font-display italic font-light leading-[1.65]"
              style={{ fontSize: "1.15rem", color: "var(--muted)" }}>
-            "The best products emerge from the intersection of deep technical skill and genuine empathy for users."
+            "Great products are made when strong technical skills meet real understanding of people and their needs"
           </p>
         </motion.div>
 

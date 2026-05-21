@@ -51,7 +51,7 @@ export default function Experience() {
           </p>
           <h2 className="font-sans font-bold leading-none mb-8"
               style={{ fontSize: "clamp(36px,5vw,72px)", letterSpacing: "-0.03em", color: "var(--white)" }}>
-            My Path Through Industry
+            My Path 
           </h2>
           <p className="font-display italic font-light leading-[1.65]"
              style={{ fontSize: "1.15rem", color: "var(--muted)" }}>

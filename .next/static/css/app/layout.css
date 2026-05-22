@@ -583,6 +583,18 @@ video {
 .top-\[20px\]{
   top: 20px;
 }
+.left-5{
+  left: 1.25rem;
+}
+.top-5{
+  top: 1.25rem;
+}
+.left-4{
+  left: 1rem;
+}
+.top-4{
+  top: 1rem;
+}
 .z-10{
   z-index: 10;
 }
@@ -597,6 +609,9 @@ video {
 }
 .z-\[900\]{
   z-index: 900;
+}
+.z-30{
+  z-index: 30;
 }
 .col-span-2{
   grid-column: span 2 / span 2;
@@ -838,6 +853,12 @@ video {
 .p-9{
   padding: 2.25rem;
 }
+.p-5{
+  padding: 1.25rem;
+}
+.p-4{
+  padding: 1rem;
+}
 .px-2\.5{
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -889,6 +910,10 @@ video {
 .py-\[18px\]{
   padding-top: 18px;
   padding-bottom: 18px;
+}
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .pb-0\.5{
   padding-bottom: 0.125rem;
@@ -950,6 +975,9 @@ video {
 .text-xs{
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-\[0\.62rem\]{
+  font-size: 0.62rem;
 }
 .font-bold{
   font-weight: 700;
@@ -1028,6 +1056,9 @@ video {
 }
 .no-underline{
   text-decoration-line: none;
+}
+.opacity-0{
+  opacity: 0;
 }
 .outline-none{
   outline: 2px solid transparent;
@@ -1136,11 +1167,30 @@ html.lenis { height: auto; }
   --tw-scale-y: 1.04;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.group:hover .group-hover\:scale-\[1\.03\]{
+  --tw-scale-x: 1.03;
+  --tw-scale-y: 1.03;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.group:hover .group-hover\:scale-\[1\.08\]{
+  --tw-scale-x: 1.08;
+  --tw-scale-y: 1.08;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .group:hover .group-hover\:bg-\[var\(--accent\)\]{
   background-color: var(--accent);
 }
 .group:hover .group-hover\:opacity-0{
   opacity: 0;
+}
+.group:hover .group-hover\:opacity-100{
+  opacity: 1;
+}
+.group:hover .group-hover\:opacity-90{
+  opacity: 0.9;
+}
+.group:hover .group-hover\:opacity-75{
+  opacity: 0.75;
 }
 @media (min-width: 768px){
 

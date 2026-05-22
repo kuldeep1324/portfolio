@@ -54,11 +54,6 @@ export default function Hero() {
       </div>
 
       {/* Cover image */}
-      <img
-        src={defaultCoverSrc}
-        alt="Hero cover"
-        className="absolute top-[110px] right-[60px] w-[min(42vw,520px)] h-[220px] md:h-[260px] object-cover"
-      />
 
       {/* Tag */}
       <div className="overflow-hidden mb-7">
@@ -126,8 +121,6 @@ export default function Hero() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator removed */}
     </section>
   );
 }

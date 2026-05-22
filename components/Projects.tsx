@@ -9,8 +9,8 @@ type Project = {
   title: string;
   image: string;
   category: string;
-  demo: string;
-  github: string;
+  demo?: string;
+  github?: string;
   bg: string;
 };
 
@@ -28,11 +28,10 @@ const allProjects: Project[] = [
   {
     id: 2,
     num: "02",
-    title: "upcoming project",
-    image: "/portfolio-cover-page.png",
-    category: "Web App",
-    demo: "#",
-    github: "#",
+    title: "Gaming Posters Collection",
+    image: "GamingPosters.png",
+    category: "Design",
+    demo: "https://canva.link/24lp86dwu9ttqp8",
     bg: "#1a1714",
   },
   {

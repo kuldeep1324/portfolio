@@ -4,11 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const socials = [
-  { name: "LinkedIn", handle: "@aryan-mehta", href: "#" },
-  { name: "GitHub",   handle: "@aryanmehta",   href: "#" },
-  { name: "Dribbble", handle: "@aryan_designs", href: "#" },
-  { name: "Twitter",  handle: "@aryan_dev",     href: "#" },
-  { name: "Email",    handle: "hello@aryanmehta.dev", href: "mailto:hello@aryanmehta.dev" },
+  { name: "LinkedIn", handle: "@Kuldeep", href: "#" },
+  { name: "GitHub",   handle: "@kuldeep1324",   href: "https://github.com/kuldeep1324" },
+  { name: "Twitter",  handle: "@Kuldeep13_24",     href: "https://x.com/kuldeep13_24" },
+  { name: "Email",    handle: "kuldeep13rajak@gmail.com", href: "mailto:kuldeep13rajak@gmail.com" },
 ];
 
 export default function Contact() {
@@ -80,7 +79,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          {(["Your Name", "Email Address", "Project Type"] as const).map(label => (
+          {(["Contact No.", "Email Address"] as const).map(label => (
             <div key={label} className="mb-6">
               <label className="block font-mono text-[0.65rem] tracking-[0.2em] uppercase mb-2.5"
                      style={{ color: "var(--muted)" }}>
@@ -94,8 +93,8 @@ export default function Contact() {
                   caretColor:  "var(--accent)",
                 }}
                 placeholder={
-                  label === "Your Name"     ? "John Doe"               :
-                  label === "Email Address" ? "john@company.com"        :
+                  label === "Contact No."     ? "+91 9644397542"               :
+                  label === "Email Address" ? "kuldeep13rajak@gmail.com"        :
                                              "Web App, Design..."
                 }
                 onFocus={e  => (e.target.style.borderColor = "var(--accent)")}
@@ -103,33 +102,7 @@ export default function Contact() {
               />
             </div>
           ))}
-
-          <div className="mb-6">
-            <label className="block font-mono text-[0.65rem] tracking-[0.2em] uppercase mb-2.5"
-                   style={{ color: "var(--muted)" }}>
-              Tell Me About Your Project
-            </label>
-            <textarea
-              rows={5}
-              className="w-full bg-transparent border-b py-3.5 font-display text-[1.1rem] outline-none resize-none transition-colors duration-300"
-              style={{ borderColor: "var(--dark-gray)", color: "var(--soft-white)", caretColor: "var(--accent)" }}
-              placeholder="Describe your idea, goals, and timeline..."
-              onFocus={e  => (e.target.style.borderColor = "var(--accent)")}
-              onBlur={e   => (e.target.style.borderColor = "var(--dark-gray)")}
-            />
-          </div>
-
-          <button
-            className="w-full py-[18px] mt-2 font-mono text-[0.75rem] tracking-[0.2em] uppercase transition-all duration-300"
-            style={{
-              background:    sent ? "var(--accent)" : "var(--soft-white)",
-              color:         "var(--black)",
-              letterSpacing: sent ? "0.35em" : "0.2em",
-            }}
-            onClick={handleSubmit}
-          >
-            {sent ? "Message Sent ✓" : "Send Message"}
-          </button>
+          
         </motion.div>
       </div>
 

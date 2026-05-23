@@ -62,7 +62,7 @@ export default function Hero() {
           style={{ color: "var(--accent)" }}
           variants={slideUp} initial="hidden" animate="visible" custom={1.6}
         >
-          Full Stack Developer · Designer 
+          Full Stack Developer · Graphic Designer 
         </motion.p>
       </div>
 

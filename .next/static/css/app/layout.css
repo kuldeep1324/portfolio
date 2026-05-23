@@ -646,6 +646,9 @@ video {
 .mt-5{
   margin-top: 1.25rem;
 }
+.mt-8{
+  margin-top: 2rem;
+}
 .block{
   display: block;
 }
@@ -803,6 +806,9 @@ video {
 }
 .rounded-full{
   border-radius: 9999px;
+}
+.rounded-sm{
+  border-radius: 0.125rem;
 }
 .border{
   border-width: 1px;
@@ -1208,12 +1214,20 @@ html.lenis { height: auto; }
     top: 120px;
   }
 
+  .lg\:mt-12{
+    margin-top: 3rem;
+  }
+
   .lg\:block{
     display: block;
   }
 
   .lg\:grid-cols-\[minmax\(0\2c 1\.05fr\)_minmax\(320px\2c 0\.95fr\)\]{
     grid-template-columns: minmax(0,1.05fr) minmax(320px,0.95fr);
+  }
+
+  .lg\:justify-start{
+    justify-content: flex-start;
   }
 
   .lg\:pr-\[520px\]{

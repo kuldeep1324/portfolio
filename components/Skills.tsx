@@ -4,17 +4,62 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const skills = [
-  { name: "React / Next.js", level: "Expert", w: 95 },
-  { name: "UI/UX Design", level: "Expert", w: 90 },
-  { name: "Node.js", level: "Advanced", w: 88 },
-  { name: "TypeScript", level: "Advanced", w: 85 },
-  { name: "PostgreSQL", level: "Advanced", w: 82 },
-  { name: "MongoDB", level: "Advanced", w: 80 },
-  { name: "Tailwind CSS", level: "Expert", w: 92 },
-  { name: "Framer Motion", level: "Advanced", w: 78 },
+  {
+    name: "React / Next.js",
+    level: "Expert",
+    w: 95,
+    description: "Building fast, scalable, responsive web applications with modern frontend technologies.",
+  },
+  {
+    name: "UI/UX Design",
+    level: "Expert",
+    w: 90,
+    description: "Designing intuitive user experiences with clean layouts and engaging visual interactions.",
+  },
+  {
+    name: "Node.js",
+    level: "Advanced",
+    w: 88,
+    description: "Developing secure backend systems, APIs, and scalable server-side application architectures.",
+  },
+  {
+    name: "TypeScript",
+    level: "Advanced",
+    w: 85,
+    description: "Writing maintainable, type-safe, scalable code for modern web application development.",
+  },
+  {
+    name: "PostgreSQL",
+    level: "Advanced",
+    w: 82,
+    description: "Managing structured databases with optimized queries, relations, and scalable data handling.",
+  },
+  {
+    name: "MongoDB",
+    level: "Advanced",
+    w: 80,
+    description: "Building flexible NoSQL database structures for scalable modern application ecosystems.",
+  },
+  {
+    name: "Tailwind CSS",
+    level: "Expert",
+    w: 92,
+    description: "Creating responsive, modern interfaces using utility-first styling and clean design systems.",
+  },
+  {
+    name: "Framer Motion",
+    level: "Advanced",
+    w: 78,
+    description: "Crafting smooth animations and interactive transitions for immersive digital user experiences.",
+  },
 ];
 
-const languages = ["C", "C++", "JavaScript", "Python"];
+const languages = [
+  { name: "C", description: "Building strong programming fundamentals through efficient logic, memory management, and algorithms." },
+  { name: "C++", description: "Developing high-performance applications using object-oriented programming and optimized data structures." },
+  { name: "JavaScript", description: "Creating dynamic, interactive web experiences with modern frontend and backend development." },
+  { name: "Python", description: "Building intelligent applications, automation tools, and scalable AI-powered software solutions." },
+];
 
 export default function Skills() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -87,7 +132,7 @@ export default function Skills() {
               </div>
 
               <div className="font-display font-light leading-relaxed relative z-10 max-w-[18ch]" style={{ color: "var(--muted)" }}>
-                Simple, focused, and aligned with the overall visual language.
+                {s.description}
               </div>
 
               <div className="font-mono text-[0.65rem] tracking-[0.15em] uppercase relative z-10 mt-5" style={{ color: "var(--accent)" }}>
@@ -113,7 +158,7 @@ export default function Skills() {
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             {languages.map((lang, idx) => (
               <div
-                key={lang}
+                key={lang.name}
                 style={{ padding: "28px 24px", background: "linear-gradient(180deg, rgba(255,255,255,0.01), transparent)" }}
                 className="group"
               >
@@ -121,10 +166,10 @@ export default function Skills() {
                   0{idx + 1}
                 </div>
                 <div className="font-sans font-bold" style={{ color: "var(--soft-white)", fontSize: "1.3rem" }}>
-                  {lang}
+                  {lang.name}
                 </div>
                 <div className="font-display font-light mt-3" style={{ color: "var(--muted)", maxWidth: "24ch" }}>
-                  Proficient in core concepts and practical usage.
+                  {lang.description}
                 </div>
               </div>
             ))}

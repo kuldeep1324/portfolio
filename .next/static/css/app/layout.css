@@ -789,6 +789,12 @@ video {
 .gap-\[80px\]{
   gap: 80px;
 }
+.self-start{
+  align-self: flex-start;
+}
+.justify-self-end{
+  justify-self: end;
+}
 .overflow-hidden{
   overflow: hidden;
 }
@@ -1186,6 +1192,32 @@ html.lenis { height: auto; }
 
   .md\:pr-\[620px\]{
     padding-right: 620px;
+  }
+}
+@media (min-width: 1024px){
+
+  .lg\:sticky{
+    position: sticky;
+  }
+
+  .lg\:top-\[100px\]{
+    top: 100px;
+  }
+
+  .lg\:top-\[120px\]{
+    top: 120px;
+  }
+
+  .lg\:block{
+    display: block;
+  }
+
+  .lg\:grid-cols-\[minmax\(0\2c 1\.05fr\)_minmax\(320px\2c 0\.95fr\)\]{
+    grid-template-columns: minmax(0,1.05fr) minmax(320px,0.95fr);
+  }
+
+  .lg\:pr-\[520px\]{
+    padding-right: 520px;
   }
 }
 

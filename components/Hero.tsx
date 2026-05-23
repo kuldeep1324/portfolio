@@ -110,15 +110,6 @@ export default function Hero() {
           >
             View My Work
           </a>
-          <a
-            href="#contact"
-            className="font-mono text-[0.72rem] tracking-[0.15em] uppercase py-4 no-underline inline-block border-b transition-colors duration-300"
-            style={{ color: "var(--silver)", borderColor: "var(--dark-gray)" }}
-            onMouseMove={magnetize} onMouseLeave={demagnetize}
-            onMouseEnter={e => { e.currentTarget.style.color = "var(--soft-white)"; e.currentTarget.style.borderColor = "var(--silver)"; }}
-          >
-            Start a Project ↗
-          </a>
         </motion.div>
       </div>
     </section>

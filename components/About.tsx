@@ -36,11 +36,11 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="relative px-[60px] py-[120px] md:pr-[620px]"
+      className="grid gap-[80px] px-[60px] py-[120px] lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)]"
     >
       {/* Left — sticky */}
       <motion.div
-        className="max-w-[760px] md:sticky md:top-[100px] h-fit"
+        className="max-w-[760px] lg:sticky lg:top-[100px] h-fit self-start"
         initial={{ opacity: 0, y: 50 }}
         animate={sectionView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -75,23 +75,23 @@ export default function About() {
         </a>
       </motion.div>
 
-      {/* Right — fixed portrait */}
+      {/* Right — section-sticky portrait */}
       <motion.div
-        className="pointer-events-none hidden md:block fixed right-[60px] top-[120px] z-10"
+        className="pointer-events-none hidden lg:block lg:sticky lg:top-[120px] self-start justify-self-end"
         initial={{ opacity: 0, y: 24, scale: 0.98 }}
         animate={sectionView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.98 }}
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
         <div
           className="relative overflow-hidden border border-white/10 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
-          style={{ width: "min(38vw, 540px)", aspectRatio: "1086 / 1448" }}
+          style={{ width: "min(32vw, 440px)", aspectRatio: "1086 / 1448" }}
         >
           <Image
             src="/portfolio-about-img.png"
             alt="Kuldeep Rajak portrait"
             fill
             priority
-            sizes="(max-width: 900px) 100vw, 540px"
+            sizes="(max-width: 1024px) 100vw, 440px"
             className="object-cover"
           />
         </div>
@@ -99,10 +99,9 @@ export default function About() {
 
       {/* Mobile: single column */}
       <style>{`
-        @media(max-width:900px){
-          #about { padding:80px 24px!important; }
+        @media(max-width:1023px){
+          #about { grid-template-columns:1fr!important; padding:80px 24px!important; }
           #about > div { position: static!important; width: 100%!important; }
-          #about .about-portrait { display: none!important; }
         }
       `}</style>
     </section>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -35,12 +36,11 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="grid gap-[80px] px-[60px] py-[120px]"
-      style={{ gridTemplateColumns: "1fr 1fr" }}
+      className="relative px-[60px] py-[120px] md:pr-[620px]"
     >
       {/* Left — sticky */}
       <motion.div
-        className="md:sticky md:top-[100px] h-fit"
+        className="max-w-[760px] md:sticky md:top-[100px] h-fit"
         initial={{ opacity: 0, y: 50 }}
         animate={sectionView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -75,15 +75,34 @@ export default function About() {
         </a>
       </motion.div>
 
-      {/* Right — blank space for images */}
-      <div className="flex flex-col gap-5 pt-[60px]">
-        {/* Add your images here */}
-      </div>
+      {/* Right — fixed portrait */}
+      <motion.div
+        className="pointer-events-none hidden md:block fixed right-[60px] top-[120px] z-10"
+        initial={{ opacity: 0, y: 24, scale: 0.98 }}
+        animate={sectionView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.98 }}
+        transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
+        <div
+          className="relative overflow-hidden border border-white/10 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.45)]"
+          style={{ width: "min(38vw, 540px)", aspectRatio: "1086 / 1448" }}
+        >
+          <Image
+            src="/portfolio-about-img.png"
+            alt="Kuldeep Rajak portrait"
+            fill
+            priority
+            sizes="(max-width: 900px) 100vw, 540px"
+            className="object-cover"
+          />
+        </div>
+      </motion.div>
 
       {/* Mobile: single column */}
       <style>{`
         @media(max-width:900px){
-          #about { grid-template-columns:1fr!important; padding:80px 24px!important; }
+          #about { padding:80px 24px!important; }
+          #about > div { position: static!important; width: 100%!important; }
+          #about .about-portrait { display: none!important; }
         }
       `}</style>
     </section>

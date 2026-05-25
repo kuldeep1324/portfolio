@@ -580,9 +580,6 @@ video {
 .top-\[20px\]{
   top: 20px;
 }
-.top-\[120px\]{
-  top: 120px;
-}
 .z-10{
   z-index: 10;
 }
@@ -597,9 +594,6 @@ video {
 }
 .z-\[900\]{
   z-index: 900;
-}
-.col-span-2{
-  grid-column: span 2 / span 2;
 }
 .mb-1{
   margin-bottom: 0.25rem;
@@ -645,9 +639,6 @@ video {
 }
 .mt-5{
   margin-top: 1.25rem;
-}
-.mt-8{
-  margin-top: 2rem;
 }
 .block{
   display: block;
@@ -714,14 +705,14 @@ video {
 .max-w-\[18ch\]{
   max-width: 18ch;
 }
+.max-w-\[760px\]{
+  max-width: 760px;
+}
 .max-w-sm{
   max-width: 24rem;
 }
 .max-w-xs{
   max-width: 20rem;
-}
-.max-w-\[760px\]{
-  max-width: 760px;
 }
 .-translate-y-1\/2{
   --tw-translate-y: -50%;
@@ -774,9 +765,6 @@ video {
 .gap-4{
   gap: 1rem;
 }
-.gap-5{
-  gap: 1.25rem;
-}
 .gap-8{
   gap: 2rem;
 }
@@ -807,9 +795,6 @@ video {
 .rounded-full{
   border-radius: 9999px;
 }
-.rounded-sm{
-  border-radius: 0.125rem;
-}
 .border{
   border-width: 1px;
 }
@@ -825,12 +810,12 @@ video {
 .border-white\/10{
   border-color: rgb(250 249 247 / 0.1);
 }
-.bg-transparent{
-  background-color: transparent;
-}
 .bg-\[\#111111\]{
   --tw-bg-opacity: 1;
   background-color: rgb(17 17 17 / var(--tw-bg-opacity, 1));
+}
+.bg-transparent{
+  background-color: transparent;
 }
 .object-cover{
   -o-object-fit: cover;
@@ -898,9 +883,6 @@ video {
 }
 .pl-7{
   padding-left: 1.75rem;
-}
-.pt-\[60px\]{
-  padding-top: 60px;
 }
 .text-center{
   text-align: center;
@@ -1156,16 +1138,8 @@ html.lenis { height: auto; }
     position: sticky;
   }
 
-  .md\:top-\[100px\]{
-    top: 100px;
-  }
-
   .md\:top-\[120px\]{
     top: 120px;
-  }
-
-  .md\:block{
-    display: block;
   }
 
   .md\:inline-block{
@@ -1188,16 +1162,8 @@ html.lenis { height: auto; }
     align-items: flex-end;
   }
 
-  .md\:justify-end{
-    justify-content: flex-end;
-  }
-
   .md\:justify-between{
     justify-content: space-between;
-  }
-
-  .md\:pr-\[620px\]{
-    padding-right: 620px;
   }
 }
 @media (min-width: 1024px){
@@ -1214,24 +1180,12 @@ html.lenis { height: auto; }
     top: 120px;
   }
 
-  .lg\:mt-12{
-    margin-top: 3rem;
-  }
-
   .lg\:block{
     display: block;
   }
 
   .lg\:grid-cols-\[minmax\(0\2c 1\.05fr\)_minmax\(320px\2c 0\.95fr\)\]{
     grid-template-columns: minmax(0,1.05fr) minmax(320px,0.95fr);
-  }
-
-  .lg\:justify-start{
-    justify-content: flex-start;
-  }
-
-  .lg\:pr-\[520px\]{
-    padding-right: 520px;
   }
 }
 

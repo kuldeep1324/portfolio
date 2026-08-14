@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const socials = [
-  { name: "LinkedIn", handle: "@Kuldeep", href: "#" },
+  { name: "LinkedIn", handle: "@Kuldeep", href: "https://www.linkedin.com/in/kuldeep-rajak-6a508933a/" },
   { name: "GitHub",   handle: "@kuldeep1324",   href: "https://github.com/kuldeep1324" },
   { name: "Twitter",  handle: "@Kuldeep13_24",     href: "https://x.com/kuldeep13_24" },
   { name: "Email",    handle: "kuldeep13rajak@gmail.com", href: "mailto:kuldeep13rajak@gmail.com" },

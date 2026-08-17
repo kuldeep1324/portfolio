@@ -37,11 +37,11 @@ const allProjects: Project[] = [
   {
     id: 3,
     num: "03",
-    title: "Upcoming Project",
-    image: "/portfolio-cover-page.png",
-    category: "Mobile",
-    demo: "#",
-    github: "#",
+    title: "ParamSalon Website",
+    image: "/ParamSalon.png",
+    category: "Web App",
+    demo: "https://param-salon.vercel.app/",
+    github: "https://github.com/kuldeep1324/Param-Salon",
     bg: "#161a1a",
   },
 ];

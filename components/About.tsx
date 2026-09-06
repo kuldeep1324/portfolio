@@ -65,7 +65,7 @@ export default function About() {
     
 
         <a
-          href="/resume.pdf"
+          href="/KuldeepRajakResume.pdf"
           className="inline-block font-mono text-[0.72rem] tracking-[0.15em] uppercase px-9 py-4 no-underline transition-colors duration-300"
           style={{ background: "var(--soft-white)", color: "var(--black)" }}
           onMouseEnter={e => (e.currentTarget.style.background = "var(--accent)")}

@@ -6,13 +6,13 @@ const timeline = [
   {
     date:    "2026 — Present",
     role:    "Data Analyst",
-    company: "Self Learning",
+    company: "Code With Harry",
     desc:    "Performed data cleaning, analysis, and visualization using SQL, Python, Excel, and Power BI, developing interactive dashboards and reports to identify key trends, measure performance, and deliver actionable business insights.",
   },
   {
     date:    "2025 — 2026",
     role:    "Backend Part",
-    company: "Self Learning",
+    company: "Code With Harry",
     desc:    "Developed secure and scalable backend systems using Node.js, Express.js, MongoDB, and PostgreSQL, building RESTful APIs for authentication, transactions, and efficient data management.",
   },
   {
